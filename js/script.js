@@ -10,44 +10,41 @@ const cells = 100;
 const cellNum = [];
 for (let i = 0; i < 100; i++) {
     cellNum[i] = i + 1;
-}
-console.log(cellNum);   
+}   
 
 const bombs = 16;
 const bombArray = [];
-
-for (let i = 0; i < bombs; i++) {
-    let bombGenerator = Math.floor(Math.random() * cellNum);
-    console.log(bombGenerator);
-    if(bombGenerator[i] === bombArray[i]){
-    }
-    else {
-        bombArray.push(bombGenerator);
-    }
-}
 console.log(bombArray);
 
+while(bombArray.length < 16) {
+    let newBomb = Math.floor(Math.random() * cells);
+
+    if (bombArray.includes(newBomb) === false) {
+        bombArray.push(newBomb);
+    }
+}
 
 const box = document.querySelector(".box");
-console.log(box);
 
 for (let i = 0; i < cells; i++) {
     const item = document.createElement("div");
-    console.log(item);
 
     item.innerHTML = `<span>${cellNum[i]}</span>`    
     
     item.classList.add("cell");
 
     box.append(item);
-
+    
     item.addEventListener("click", function(){
-        let clickAbomb;
-        if (bombArray[i] !== cellNum[i]) {
-            item.classList.add("azzurre")
+        const num = parseInt(this.innerText);
+        if (bombArray.includes(num) === false) {
+            this.classList.add("azzurre");
+            this.style.pointerEvents = "none";
         } else {
-            item.classList.add("red");
+            this.classList.add("red");
+            box.style.pointerEvents = "none";
+            const score = document.querySelector(".score")
+            score.innerHTML = `<h1>Hai ottenuto il punteggio di: ${box.getElementsByClassName("azzurre").length}</h1><p>Ricarica la pagina per una nuova partita</p>`
         }
-        console.log(clickAbomb)
     });
 }
