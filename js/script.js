@@ -7,12 +7,26 @@
 
 
 const cells = 100;
-
 const cellNum = [];
 for (let i = 0; i < 100; i++) {
     cellNum[i] = i + 1;
 }
 console.log(cellNum);   
+
+const bombs = 16;
+const bombArray = [];
+
+for (let i = 0; i < bombs; i++) {
+    let bombGenerator = Math.floor(Math.random() * cellNum);
+    console.log(bombGenerator);
+    if(bombGenerator[i] === bombArray[i]){
+    }
+    else {
+        bombArray.push(bombGenerator);
+    }
+}
+console.log(bombArray);
+
 
 const box = document.querySelector(".box");
 console.log(box);
@@ -23,16 +37,17 @@ for (let i = 0; i < cells; i++) {
 
     item.innerHTML = `<span>${cellNum[i]}</span>`    
     
-    item.classList.add("cell", "difficultySelection" ,"display");
-
-    item.addEventListener("click", function(){
-        this.classList.add("azzurre")
-    });
+    item.classList.add("cell");
 
     box.append(item);
+
+    item.addEventListener("click", function(){
+        let clickAbomb;
+        if (bombArray[i] !== cellNum[i]) {
+            item.classList.add("azzurre")
+        } else {
+            item.classList.add("red");
+        }
+        console.log(clickAbomb)
+    });
 }
-
-
-
-
- 

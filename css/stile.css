@@ -71,7 +71,10 @@ main{
     color: white;
     background-color: #6495ED;
 }
-
+.red{
+    color: white;
+    background-color: red;
+}
 /* FOOTER */
 footer{
     height: 50px;
