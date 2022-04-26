@@ -1,0 +1,84 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+.d-none{
+    display: none;
+}
+.container{
+    height: 100vh;
+}
+
+/* HEADER */
+header{
+    height: 100px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+header div button{
+    margin: 0 5px;
+    padding: 0.2em 0.5em;
+}
+
+/* MAIN */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px);
+    background-color: aquamarine;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    font-weight: bold;
+    /* debug */
+    height: calc(100% / 10);
+    width:  calc(100% / 10);
+    /*      */
+}
+.easy{
+    height: calc(100% / 10);
+    width:  calc(100% / 10);
+}
+.medium{
+    height: calc(100% / 9);
+    width:  calc(100% / 9);
+}
+.difficult{
+    height: calc(100% / 7);
+    width:  calc(100% / 7);
+}
+.azzurre{
+    color: white;
+    background-color: #6495ED;
+}
+
+/* FOOTER */
+footer{
+    height: 50px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
